@@ -11,7 +11,13 @@
 |
 */
 
+
+
+
 Route::get('/', function () {
-    //return view('welcome');
-    echo "hello world";
+    return view('index');
+    //echo "hello world";
 });
+
+
+Route::get('/admin/', 'AdminController@index');
