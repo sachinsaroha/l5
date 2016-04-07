@@ -13,4 +13,8 @@ class AdminController extends Controller
     	return view('index');
     	//echo "index method";
     }
+
+    public function getData(){
+    	
+    }
 }
