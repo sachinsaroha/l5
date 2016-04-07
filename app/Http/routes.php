@@ -20,4 +20,13 @@ Route::get('/', function () {
 });
 
 
+
+Route::get('/data', function(){
+
+	$data = ['sumit','akshay','sachin'];
+	return view('displayDataView')->with('data', $data);
+
+});
+
+
 Route::get('/admin/', 'AdminController@index');
