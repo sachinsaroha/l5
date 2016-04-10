@@ -1,32 +1,28 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
+
+
+Route::get('/data/{id}', [ 'uses' => 'AdminController@displayID']);
 
 
 
 
-Route::get('/', function () {
-    return view('index');
-    //echo "hello world";
+
+
+Route::get('/data', [ 'uses' => 'AdminController@getData']);
+
+Route::get('datat/{id}', function($id){
+	echo $id;
+	//echo "hii";
+	//$data = ['sumit','akshay','sachin'];
+	//return view('displayDataView')->with('data', $data);
 });
 
 
-
-Route::get('/data', function(){
-
-	$data = ['sumit','akshay','sachin'];
-	return view('displayDataView')->with('data', $data);
-
+Route::get('/customer', function(){
+	$customer= App\Customer::find(1);
+	//echo "<pre>";
+	//print_r($customer);
+	echo $customer->name;
 });
 
-
-Route::get('/admin/', 'AdminController@index');
