@@ -26,3 +26,7 @@ Route::get('/customer', function(){
 	echo $customer->name;
 });
 
+Route::get('/', function(){
+	echo "Welcome";
+});
+
