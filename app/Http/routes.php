@@ -1,12 +1,21 @@
 <?php
 
 
+Route::get('/', function(){
+	echo "Welcome";
+});
+
+Route::get('/customers', [ 'as' => 'customers', 'uses' =>'CustomerController@index']);
+
+Route::get('/customer/{id}', [ 'as' => 'customer','uses' =>'CustomerController@getCustomer']);
+
+Route::get('/newcustomer', [ 'as' => 'newcustomer', 'uses' =>'CustomerController@newCustomer']);
+
+Route::post('/postcustomer', [ 'as' => 'postcustomer', 'uses' =>'CustomerController@postCustomer']);
+
+/*
 
 Route::get('/data/{id}', [ 'uses' => 'AdminController@displayID']);
-
-
-
-
 
 
 Route::get('/data', [ 'uses' => 'AdminController@getData']);
@@ -30,3 +39,4 @@ Route::get('/', function(){
 	echo "Welcome";
 });
 
+*/

@@ -17,6 +17,7 @@ class MakeCustomersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('address', 200);
+            $table->timestamps();
         });
     }
 
